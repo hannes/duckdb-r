@@ -6,15 +6,15 @@ set -x
 cd `dirname $0`
 
 if [ -z "$1" ]; then
-  upstream_dir=../duckdb
+  upstream_dir=../duckdb-main
 else
   upstream_dir="$1"
 fi
 
-if [ -n "$(git status --porcelain)" ]; then
-  echo "Error: working directory not clean"
-  exit 1
-fi
+# if [ -n "$(git status --porcelain)" ]; then
+#   echo "Error: working directory not clean"
+#   exit 1
+# fi
 
 if [ -n "$(git -C "$upstream_dir" status --porcelain)" ]; then
   echo "Warning: working directory $upstream_dir not clean"

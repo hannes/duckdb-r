@@ -29,7 +29,6 @@
 #ifdef __MINGW32__
 // need to manually define this for mingw
 extern "C" WINBASEAPI BOOL WINAPI GetPhysicallyInstalledSystemMemory(PULONGLONG);
-extern "C" WINBASEAPI BOOL QueryFullProcessImageNameW(HANDLE, DWORD, LPWSTR, PDWORD);
 #endif
 
 #undef FILE_CREATE // woo mingw

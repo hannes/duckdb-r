@@ -14,13 +14,10 @@
 #include "duckdb/optimizer/statistics_propagator.hpp"
 #include "duckdb/planner/expression_iterator.hpp"
 #include "duckdb/planner/table_filter.hpp"
+#include "re2/re2.h"
 
 #include <iostream>
 #include <sstream>
-
-namespace duckdb_re2 {
-class RE2;
-} // namespace duckdb_re2
 
 namespace duckdb {
 

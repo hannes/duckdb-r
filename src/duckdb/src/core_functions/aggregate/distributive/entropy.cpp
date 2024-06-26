@@ -50,12 +50,11 @@ struct EntropyFunctionBase {
 
 	template <class T, class STATE>
 	static void Finalize(STATE &state, T &target, AggregateFinalizeData &finalize_data) {
-		double count = static_cast<double>(state.count);
+		double count = state.count;
 		if (state.distinct) {
 			double entropy = 0;
 			for (auto &val : *state.distinct) {
-				double val_sec = static_cast<double>(val.second);
-				entropy += (val_sec / count) * log2(count / val_sec);
+				entropy += (val.second / count) * log2(count / val.second);
 			}
 			target = entropy;
 		} else {

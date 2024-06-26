@@ -24,7 +24,7 @@ struct dtime_t { // NOLINT
 		return micros;
 	}
 	explicit inline operator double() const {
-		return static_cast<double>(micros);
+		return micros;
 	}
 
 	// comparison operators

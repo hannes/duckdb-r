@@ -65,19 +65,19 @@ void BaseScanner::SetIterator(const CSVIterator &it) {
 }
 
 ScannerResult &BaseScanner::ParseChunk() {
-	throw InternalException("ParseChunk() from CSV Base Scanner is not implemented");
+	throw InternalException("ParseChunk() from CSV Base Scanner is mot implemented");
 }
 
 ScannerResult &BaseScanner::GetResult() {
-	throw InternalException("GetResult() from CSV Base Scanner is not implemented");
+	throw InternalException("GetResult() from CSV Base Scanner is mot implemented");
 }
 
 void BaseScanner::Initialize() {
-	throw InternalException("Initialize() from CSV Base Scanner is not implemented");
+	throw InternalException("Initialize() from CSV Base Scanner is mot implemented");
 }
 
 void BaseScanner::FinalizeChunkProcess() {
-	throw InternalException("FinalizeChunkProcess() from CSV Base Scanner is not implemented");
+	throw InternalException("FinalizeChunkProcess() from CSV Base Scanner is mot implemented");
 }
 
 CSVStateMachine &BaseScanner::GetStateMachine() {

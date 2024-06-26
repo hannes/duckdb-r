@@ -13,7 +13,7 @@ TupleDataBlock::TupleDataBlock(BufferManager &buffer_manager, idx_t capacity_p) 
 	buffer_manager.Allocate(MemoryTag::HASH_TABLE, capacity, false, &handle);
 }
 
-TupleDataBlock::TupleDataBlock(TupleDataBlock &&other) noexcept : capacity(0), size(0) {
+TupleDataBlock::TupleDataBlock(TupleDataBlock &&other) noexcept {
 	std::swap(handle, other.handle);
 	std::swap(capacity, other.capacity);
 	std::swap(size, other.size);

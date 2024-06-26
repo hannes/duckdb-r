@@ -30,7 +30,7 @@ namespace duckdb {
 UnifiedVectorFormat::UnifiedVectorFormat() : sel(nullptr), data(nullptr) {
 }
 
-UnifiedVectorFormat::UnifiedVectorFormat(UnifiedVectorFormat &&other) noexcept : sel(nullptr), data(nullptr) {
+UnifiedVectorFormat::UnifiedVectorFormat(UnifiedVectorFormat &&other) noexcept {
 	bool refers_to_self = other.sel == &other.owned_sel;
 	std::swap(sel, other.sel);
 	std::swap(data, other.data);
@@ -860,10 +860,7 @@ void Vector::Flatten(idx_t count) {
 			// constant NULL, set nullmask
 			validity.EnsureWritable();
 			validity.SetAllInvalid(count);
-			if (GetType().InternalType() != PhysicalType::STRUCT) {
-				// for structs we still need to flatten the child vectors as well
-				return;
-			}
+			return;
 		}
 		// non-null constant: have to repeat the constant
 		switch (GetType().InternalType()) {

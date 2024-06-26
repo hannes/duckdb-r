@@ -591,9 +591,6 @@ The duckdb_config must be destroyed using 'duckdb_destroy_config'
 
 This will always succeed unless there is a malloc failure.
 
-Note that `duckdb_destroy_config` should always be called on the resulting config, even if the function returns
-`DuckDBError`.
-
 * out_config: The result configuration object.
 * returns: `DuckDBSuccess` on success or `DuckDBError` on failure.
 */
@@ -1706,7 +1703,7 @@ Creates a list value from a type and an array of values of length `value_count`
 DUCKDB_API duckdb_value duckdb_create_list_value(duckdb_logical_type type, duckdb_value *values, idx_t value_count);
 
 /*!
-Creates an array value from a type and an array of values of length `value_count`
+Creates a array value from a type and an array of values of length `value_count`
 
 * type: The type of the array
 * values: The values for the array
@@ -1766,7 +1763,7 @@ The resulting type should be destroyed with `duckdb_destroy_logical_type`.
 DUCKDB_API duckdb_logical_type duckdb_create_list_type(duckdb_logical_type type);
 
 /*!
-Creates an array type from its child type.
+Creates a array type from its child type.
 The resulting type should be destroyed with `duckdb_destroy_logical_type`.
 
 * type: The child type of array type to create.

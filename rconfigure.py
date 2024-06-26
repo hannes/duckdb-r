@@ -4,7 +4,7 @@ import shutil
 import subprocess
 import platform
 
-extensions = ['parquet']
+extensions = []
 
 # check if there are any additional extensions being requested
 if 'DUCKDB_R_EXTENSIONS' in os.environ:
@@ -27,7 +27,7 @@ if 'DUCKDB_DEBUG_MOVE' in os.environ:
 if 'DUCKDB_PATH' in os.environ:
     duckdb_path = os.environ['DUCKDB_PATH']
 else:
-    duckdb_path = os.path.join('../duckdb')
+    duckdb_path = os.path.join('../duckdb-main')
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), duckdb_path, 'scripts'))
 import package_build
